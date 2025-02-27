@@ -46,6 +46,7 @@
 - [x] 推送穩定版本標籤至 GitHub
 - [x] 更新 README 與 TASKS 文檔以反映部署狀態
 - [x] 清理專案：移除不需要的檔案和目錄（src/、public/、cloudflare.json.example）
+- [x] 清理專案：移除無用的參考檔案（docs/scales/adl-sample.md、doc-sources/adl-sample.html）
 
 ## 當前工作任務
 - [ ] 優化移動端顯示效果
