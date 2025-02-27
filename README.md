@@ -1,7 +1,7 @@
 # 台灣長照居家服務量表計算器
 
 ![版本](https://img.shields.io/badge/版本-1.1.0-blue)
-![狀態](https://img.shields.io/badge/狀態-開發中-yellow)
+![狀態](https://img.shields.io/badge/狀態-已部署-success)
 ![最後更新](https://img.shields.io/badge/最後更新-2025年2月27日-green)
 
 ## 專案概述
@@ -23,7 +23,15 @@
 - 表單數據暫存功能
 - 批量處理與資料匯出
 
-## 開始使用
+## 線上訪問
+
+您可以通過以下鏈接直接訪問已部署的應用：
+
+[https://webcare.pages.dev](https://webcare.pages.dev)
+
+無需安裝或部署，直接在瀏覽器中使用。
+
+## 本地使用
 
 ### 系統需求
 
@@ -34,8 +42,16 @@
 ### 快速啟動
 
 1. 下載或克隆此存儲庫
+   ```bash
+   git clone https://github.com/LIUXVuse/webcare.git
+   cd webcare
+   ```
 2. 根據 [設置指南](SETUP.md) 啟動本地伺服器
 3. 在瀏覽器中開啟應用程式（默認為 http://localhost:3000）
+
+### 部署到自己的環境
+
+如果您想將此專案部署到自己的環境，請參考 [部署指南](DEPLOY.md) 文件，其中包含了如何部署到Cloudflare Pages的詳細步驟。
 
 ## 最近更新
 
