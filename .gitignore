@@ -1,0 +1,97 @@
+# 系統文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 編輯器和IDE文件
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 依賴目錄
+node_modules/
+bower_components/
+vendor/
+
+# 編譯輸出
+dist/
+build/
+out/
+*.min.js
+*.min.css
+
+# 日誌文件
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 環境配置文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 敏感信息文件
+secrets.json
+credentials.json
+config.local.js
+
+# 暫存文件
+.tmp/
+temp/
+cache/
+
+# 工具生成的文件
+coverage/
+.nyc_output/
+.sass-cache/
+.eslintcache
+.stylelintcache
+
+# 壓縮包
+*.zip
+*.rar
+*.tar.gz
+*.7z
+
+# 特定於此項目的敏感信息
+cloudflare_credentials.json
+
+# 忽略Node.js相關文件
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# 忽略編輯器和OS相關文件
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 忽略環境配置和敏感信息
+.env
+.env.local
+config.local.js
+deploy-config.json
+cloudflare-config.json
+
+# 忽略構建和日誌文件
+dist/
+build/
+logs/
+*.log
+
+# 忽略臨時文件和備份
+tmp/
+temp/
+*.bak
+*.tmp 

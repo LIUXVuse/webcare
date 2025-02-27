@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣長照居家服務量表計算器</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar navbar-expand navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-heartbeat me-2"></i>長照量表計算器
+            </a>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">首頁</a>
+                </li>
+                <!-- 暫時隱藏其他頁面連結
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#helpModal">量表說明</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">關於</a>
+                </li>
+                -->
+            </ul>
+        </div>
+    </header>
+
+    <div class="container mt-4 mb-5">
+        <div class="row">
+            <div class="col-lg-3 col-md-4">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title mb-0">量表選擇</h5>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action scale-selector active d-flex align-items-center" data-scale="adl">
+                            <i class="fas fa-list-ol me-3"></i> 日常生活功能量表 (ADL)
+                        </a>
+                        <!-- 暫時隱藏其他量表選項
+                        <a href="#" class="list-group-item list-group-item-action scale-selector d-flex align-items-center" data-scale="iadl">
+                            <i class="fas fa-tools me-3"></i> 工具性日常生活活動能力量表 (IADL)
+                            <span class="badge bg-info ms-auto">即將推出</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action scale-selector d-flex align-items-center" data-scale="mna">
+                            <i class="fas fa-utensils me-3"></i> 迷你營養評估 (MNA)
+                            <span class="badge bg-info ms-auto">即將推出</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action scale-selector d-flex align-items-center" data-scale="fall-risk">
+                            <i class="fas fa-exclamation-triangle me-3"></i> 跌倒風險評估
+                            <span class="badge bg-info ms-auto">即將推出</span>
+                        </a>
+                        -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">相關資源</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="docs/scales/adl-sample.md" target="_blank">
+                                    <i class="fas fa-file-alt me-2"></i>
+                                    ADL量表說明
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="https://www.mohw.gov.tw/" target="_blank">
+                                    <i class="fas fa-external-link-alt me-2"></i>
+                                    衛生福利部
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#helpModal">
+                                    <i class="fas fa-question-circle me-2"></i>
+                                    使用說明
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 id="scale-title" class="mb-0">日常生活功能量表 (ADL)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="scale-description" class="mb-4"></p>
+                        
+                        <div id="scale-container">
+                            <!-- 量表內容將由JavaScript動態生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用說明對話框 -->
+    <div class="modal fade" id="helpModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">使用說明</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>如何使用量表計算器</h5>
+                    <ol>
+                        <li>從左側選擇需要使用的評估量表</li>
+                        <li>為每個評估項目選擇最符合個案情況的選項</li>
+                        <li>點擊「計算得分」按鈕查看結果</li>
+                        <li>如需列印結果，請點擊「列印結果」按鈕</li>
+                    </ol>
+                    
+                    <h5 class="mt-4">各量表說明</h5>
+                    <p><strong>日常生活功能量表 (ADL)：</strong>評估個案的基本自理能力，包含進食、移位、個人衛生等10個項目，總分100分。</p>
+                    <p><strong>工具性日常生活活動能力量表 (IADL)：</strong>評估個案處理較複雜生活事務的能力，如使用電話、購物、備餐等。</p>
+                    <p><strong>迷你營養評估 (MNA)：</strong>評估老年人的營養狀況，協助發現營養不良風險。</p>
+                    <p><strong>跌倒風險評估：</strong>評估個案跌倒的風險因素，協助預防跌倒事件發生。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>台灣長照居家服務量表計算器</h5>
+                    <p>提供專業且便捷的長照評估工具，幫助照護者更好地了解被照護者的需求。</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>相關連結</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">使用指南</a></li>
+                        <li><a href="#" class="text-white">常見問題</a></li>
+                        <li><a href="#" class="text-white">隱私政策</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>聯繫我們</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="tel:0492222400" class="text-white"><i class="fas fa-phone me-2"></i> ☎️049-2222400</a></li>
+                        <li><a href="tel:0919711966" class="text-white"><i class="fas fa-mobile-alt me-2"></i> 📞0919711966</a></li>
+                        <li><a href="mailto:elderlycaretw@gmail.com" class="text-white"><i class="fas fa-envelope me-2"></i> ✉️elderlycaretw@gmail.com</a></li>
+                        <li><a href="https://maps.app.goo.gl/hA5yNq1LdgQSwsF19" target="_blank" class="text-white"><i class="fas fa-map-marker-alt me-2"></i> 🏢南投市漳和里文化路308巷31號</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 台灣長照居家服務量表計算器. 保留所有權利.</p>
+                <p class="mt-2 mb-0">聯繫工程師: <a href="mailto:liupony2000@gmail.com" class="text-white">liupony2000@gmail.com</a> | Power by Mr.LIU</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- 列印樣式 -->
+    <style media="print">
+        nav, footer, .scale-selector, .btn, .list-group, .card-header {
+            display: none !important;
+        }
+        #result-container {
+            display: block !important;
+        }
+        .container {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        body {
+            font-size: 14pt;
+        }
+        h1, h2, h3, h4 {
+            margin-top: 1rem !important;
+        }
+    </style>
+</body>
+</html> 

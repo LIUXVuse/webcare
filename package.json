@@ -1,0 +1,24 @@
+{
+  "name": "webcare",
+  "version": "1.0.0",
+  "description": "台灣長照居家服務量表計算器",
+  "main": "index.html",
+  "scripts": {
+    "convert": "node doc-converter.js",
+    "start": "npx serve"
+  },
+  "keywords": [
+    "healthcare",
+    "eldercare",
+    "assessment",
+    "ADL"
+  ],
+  "author": "LIUXVuse",
+  "license": "MIT",
+  "dependencies": {
+    "mammoth": "^1.9.0"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

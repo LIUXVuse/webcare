@@ -1,0 +1,28 @@
+{
+    "account_id": "YOUR_ACCOUNT_ID_HERE",
+    "api_token": "YOUR_API_TOKEN_HERE",
+    "zone_id": "YOUR_ZONE_ID_HERE",
+    "project_name": "webcare",
+    "deployment_configs": {
+        "production": {
+            "environment": "production",
+            "branch": "main",
+            "routes": [
+                {
+                    "pattern": "webcare.example.com/*",
+                    "zone_id": "YOUR_ZONE_ID_HERE"
+                }
+            ]
+        },
+        "development": {
+            "environment": "development",
+            "branch": "develop",
+            "routes": [
+                {
+                    "pattern": "dev.webcare.example.com/*",
+                    "zone_id": "YOUR_ZONE_ID_HERE"
+                }
+            ]
+        }
+    }
+} 
