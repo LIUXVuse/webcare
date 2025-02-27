@@ -298,7 +298,7 @@ function showHelp() {
     node doc-converter.js
   
   轉換指定文檔:
-    node doc-converter.js --input ./my-scale.docx
+    node doc-converter.js --input ./日常生活活動功能量表(ADL).doc
   
   轉換HTML文件:
     node doc-converter.js --input ./doc-sources/adl-sample.html

@@ -55,25 +55,27 @@ switch ($choice) {
     "2" {
         Write-Host ""
         Write-Host "運行文檔轉換工具..." -ForegroundColor Yellow
-        Write-Host "請選擇要轉換的文件類型:" -ForegroundColor Cyan
-        Write-Host "1. 使用示例HTML文件 (adl-sample.html)" -ForegroundColor White
-        Write-Host "2. 選擇其他文件..." -ForegroundColor White
+        Write-Host "請選擇要處理的文檔:" -ForegroundColor Yellow
+        Write-Host "1. 使用原始文檔 (日常生活活動功能量表(ADL).doc)" -ForegroundColor White
+        Write-Host "2. 直接啟動網站" -ForegroundColor White
         Write-Host ""
         
-        $docChoice = Read-Host "請輸入選項 (1-2)"
+        $documentOption = Read-Host "請輸入選項 (1-2)"
         
-        if ($docChoice -eq "1") {
-            node doc-converter.js --input ./doc-sources/adl-sample.html --format both
-        } elseif ($docChoice -eq "2") {
-            $docPath = Read-Host "請輸入要轉換的文件路徑"
-            node doc-converter.js --input "$docPath" --format both
+        if ($documentOption -eq "1") {
+            Write-Host "`n正在轉換文檔..." -ForegroundColor Yellow
+            node doc-converter.js --input ./日常生活活動功能量表(ADL).doc --format both
+        } elseif ($documentOption -eq "2") {
+            Write-Host "正在啟動網站..." -ForegroundColor Yellow
+            Start-Process -FilePath "powershell" -ArgumentList "-Command `"npx serve; Read-Host 'Press Enter to exit'`"" -NoNewWindow
+            Write-Host "網站已啟動，請打開瀏覽器訪問 http://localhost:3000" -ForegroundColor Green
         } else {
             Write-Host "無效的選項!" -ForegroundColor Red
         }
     }
     "3" {
         Write-Host "運行文檔轉換工具..." -ForegroundColor Yellow
-        node doc-converter.js --input ./doc-sources/adl-sample.html --format both
+        node doc-converter.js --input ./日常生活活動功能量表(ADL).doc --format both
         
         Write-Host ""
         Write-Host "啟動本地服務器..." -ForegroundColor Yellow

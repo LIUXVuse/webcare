@@ -111,7 +111,7 @@ npx serve
 ### 基本用法
 
 ```bash
-node doc-converter.js --input <輸入文件路徑> --format <輸出格式>
+node doc-converter.js --input ./日常生活活動功能量表(ADL).doc --format both
 ```
 
 ### 參數說明
@@ -146,23 +146,26 @@ node doc-converter.js --help
 ## 文件結構說明
 
 ```
-webcare/
-├── index.html              # 主頁面
-├── css/                    # 樣式文件
-│   └── styles.css          # 主樣式文件
-├── js/                     # JavaScript 文件
-│   └── index.js            # 主程序
-├── data/                   # 量表數據文件
-│   └── adl-sample.json     # ADL量表JSON數據
-├── docs/                   # 文檔目錄
-│   └── scales/             # 量表說明文檔
-│       └── adl-sample.md   # ADL量表Markdown格式說明
-├── doc-sources/            # 原始文檔目錄
-│   └── adl-sample.html     # ADL量表HTML原始文檔
-├── doc-converter.js        # 文檔轉換工具
-├── start-server.bat        # 啟動服務器的批處理文件
-├── start.ps1               # PowerShell啟動腳本
-└── package.json            # 項目依賴和配置
+project-root/
+│
+├── data/                 # 資料檔案
+│   ├── adl-sample.json   # ADL量表JSON資料
+│   
+├── docs/               
+│   ├── scales/           # 量表說明文檔
+│   
+├── js/                   # JavaScript檔案
+│   ├── adl-calculator.js # ADL計算模組
+│   ├── index.js          # 主要JavaScript檔案
+│   ├── ui-handlers.js    # UI處理模組
+│   └── utils.js          # 工具函數
+│
+├── css/                  # 樣式表
+│   ├── bootstrap.min.css # Bootstrap
+│   ├── main.css          # 主要樣式
+│   └── print.css         # 列印樣式
+│
+├── 日常生活活動功能量表(ADL).doc # ADL量表原始文檔
 ```
 
 ## 使用說明

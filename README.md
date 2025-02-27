@@ -149,7 +149,7 @@ npm install
 #### 從文檔提取量表數據
 
 ```bash
-node doc-converter.js --input ./doc-sources/adl-sample.html --format both
+node doc-converter.js --input ./日常生活活動功能量表(ADL).doc --format both
 ```
 
 #### 啟動本地服務器
@@ -182,25 +182,26 @@ npx serve
 ## 專案結構
 
 ```
-webcare/
-├── index.html              # 主頁面
-├── css/                    # 樣式文件
-│   └── styles.css          # 主樣式文件
-├── js/                     # JavaScript 文件
-│   └── index.js            # 主程序
-├── data/                   # 量表數據文件
-│   └── adl-sample.json     # ADL量表JSON數據
-├── docs/                   # 文檔目錄
-│   └── scales/             # 量表說明文檔
-│       └── adl-sample.md   # ADL量表Markdown格式說明
-├── doc-sources/            # 原始文檔目錄
-│   └── adl-sample.html     # ADL量表HTML原始文檔
-├── doc-converter.js        # 文檔轉換工具
-├── start-server.bat        # 啟動服務器的批處理文件（Windows）
-├── start.ps1               # PowerShell啟動腳本（可選）
-├── package.json            # 項目依賴和配置
-├── README.md               # 項目說明
-└── SETUP.md                # 安裝與使用指南
+project-root/
+│
+├── data/                 # 資料檔案
+│   ├── adl-sample.json   # ADL量表JSON資料
+│   
+├── docs/               
+│   ├── scales/           # 量表說明文檔
+│   
+├── js/                   # JavaScript檔案
+│   ├── adl-calculator.js # ADL計算模組
+│   ├── index.js          # 主要JavaScript檔案
+│   ├── ui-handlers.js    # UI處理模組
+│   └── utils.js          # 工具函數
+│
+├── css/                  # 樣式表
+│   ├── bootstrap.min.css # Bootstrap
+│   ├── main.css          # 主要樣式
+│   └── print.css         # 列印樣式
+│
+├── 日常生活活動功能量表(ADL).doc # ADL量表原始文檔
 ```
 
 ## 使用方法
@@ -220,7 +221,7 @@ webcare/
 node doc-converter.js --input <輸入文件路徑> --format <輸出格式>
 
 # 示例：將HTML文檔轉換為JSON和Markdown
-node doc-converter.js --input ./doc-sources/adl-sample.html --format both
+node doc-converter.js --input ./日常生活活動功能量表(ADL).doc --format both
 
 # 輸出格式選項:
 # - json: 僅輸出JSON格式

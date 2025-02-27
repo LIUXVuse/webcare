@@ -53,16 +53,18 @@ if "%choice%"=="1" (
 if "%choice%"=="2" (
     echo.
     echo 運行文檔轉換工具...
-    echo 請選擇要轉換的文件類型:
-    echo 1. 使用示例HTML文件 (adl-sample.html)
-    echo 2. 選擇其他文件...
+    echo 請選擇要處理的文檔:
+    echo 1. 使用原始文檔 (日常生活活動功能量表(ADL).doc)
+    echo 2. 直接啟動網站
     echo.
     
-    set /p docChoice=請輸入選項 (1-2): 
+    set /p documentOption=請輸入選項 (1-2): 
     
-    if "%docChoice%"=="1" (
-        call node doc-converter.js --input ./doc-sources/adl-sample.html --format both
-    ) else if "%docChoice%"=="2" (
+    if "%documentOption%"=="1" (
+        echo.
+        echo 正在轉換文檔...
+        call node doc-converter.js --input ./日常生活活動功能量表(ADL).doc --format both
+    ) else if "%documentOption%"=="2" (
         echo 請輸入要轉換的文件路徑:
         set /p docPath=路徑: 
         call node doc-converter.js --input "%docPath%" --format both
@@ -76,7 +78,7 @@ if "%choice%"=="2" (
 
 if "%choice%"=="3" (
     echo 運行文檔轉換工具...
-    call node doc-converter.js --input ./doc-sources/adl-sample.html --format both
+    call node doc-converter.js --input ./日常生活活動功能量表(ADL).doc --format both
     
     echo.
     echo 啟動本地服務器...
